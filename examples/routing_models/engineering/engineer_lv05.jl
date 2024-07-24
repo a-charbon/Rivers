@@ -5,6 +5,7 @@ include("../../../src/engineering/write_routing_levels.jl")
 include("../../../src/engineering/gauges_to_basins.jl")
 include("../../../src/engineering/write_routing_timeseries.jl")
 include("../../../src/engineering/write_routing_attributes.jl")
+include("../../../src/engineering/geo_utils.jl")
 
 function main()
     # 0. Unpack configuration file
