@@ -1,7 +1,9 @@
 # midway data is assumed to be already present
 
 [base]
-base = "/central/scratch/mdemoura/Rivers"
+base = "./"
+odunbar = "../../../../../groups/esm/odunbar/Rivers/data_from_sampo/"
+acharbon = "../"
 
 [level]
 hydro_lv = "05"
@@ -10,15 +12,15 @@ hydro_lv = "05"
 hydroatlas_shp_file = "source_data/BasinATLAS_v10_shp/BasinATLAS_v10_lev05.shp"
 
 [midway]
-basin_gauge_dict_file = "midway_data/mapping_dicts/gauge_to_basin_dict_lv05_grdc.json"
-graph_dict_file = "midway_data/graph_dicts/graph_lv05.json"
+basin_gauge_dict_file = "gauge_to_basin_dict_lv05_grdc.json"
+graph_dict_file = "graph_lv05.json"
 grdc_nc_file = "midway_data/GRDC-Globe/grdc-merged.nc"
 xd_dir = "midway_data/xd_lv05"
 
 [simulation]
-attributes_dir = "routing/attributes/attributes_lv05"
-timeseries_dir = "routing/timeseries/timeseries_lv05"
-routing_levels_dir = "routing/routing_lvs/routing_lvs_lv05"
+attributes_dir = "output/routing/attributes/attributes_lv05"
+timeseries_dir = "output/routing/timeseries/timeseries_lv05"
+routing_levels_dir = "output/routing/routing_lvs/routing_lvs_lv05"
 
 [dates]
 start_date = "1990-01-01"

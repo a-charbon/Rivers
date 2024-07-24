@@ -1,4 +1,4 @@
-using Rivers
+#using Rivers
 using Dates
 using TOML
 
@@ -6,22 +6,24 @@ function main()
     # 0. Unpack configuration file
     config = TOML.parsefile("examples/routing_models/engineering/Config.toml")
     base = config["base"]["base"]
+    acharbon = config["base"]["acharbon"]
+    odunbar = config["base"]["odunbar"]
     hydro_lv = config["level"]["hydro_lv"]
-    hydroatlas_shp_file = joinpath(base, config["source"]["hydroatlas_shp_file"])
-    basin_gauge_dict_file = joinpath(base, config["midway"]["basin_gauge_dict_file"])
-    graph_dict_file = joinpath(base, config["midway"]["graph_dict_file"])
-    grdc_nc_file = joinpath(base, config["midway"]["grdc_nc_file"])
-    xd_dir = joinpath(base, config["midway"]["xd_dir"])
-    attributes_dir = joinpath(base, config["simulation"]["attributes_dir"])
-    timeseries_dir = joinpath(base, config["simulation"]["timeseries_dir"])
-    routing_levels_dir = joinpath(base, config["simulation"]["routing_levels_dir"])
+    hydroatlas_shp_file = joinpath(odunbar, config["source"]["hydroatlas_shp_file"])
+    basin_gauge_dict_file = joinpath(acharbon, config["midway"]["basin_gauge_dict_file"])
+    graph_dict_file = joinpath(acharbon, config["midway"]["graph_dict_file"])
+    grdc_nc_file = joinpath(odunbar, config["midway"]["grdc_nc_file"])
+    xd_dir = joinpath(odunbar, config["midway"]["xd_dir"])
+    attributes_dir = joinpath(acharbon, config["simulation"]["attributes_dir"])
+    timeseries_dir = joinpath(acharbon, config["simulation"]["timeseries_dir"])
+    routing_levels_dir = joinpath(acharbon, config["simulation"]["routing_levels_dir"])
     start_date = Date(config["dates"]["start_date"], "yyyy-mm-dd")
     end_date = Date(config["dates"]["end_date"], "yyyy-mm-dd")
 
     
     # 1. Ensure the graph is written under the simulation directory
-    cp(graph_dict_file, joinpath(base, "routing/graphs/graph_lv$hydro_lv.json"), force=true)
-    graph_dict_file = joinpath(base, "routing/graphs/graph_lv$hydro_lv.json")
+    cp(graph_dict_file, joinpath(acharbon, "output/routing/graphs/graph_lv$hydro_lv.json"), force=true)
+    graph_dict_file = joinpath(acharbon, "output/routing/graphs/graph_lv$hydro_lv.json")
     
 
     # 2. Write routing levels
