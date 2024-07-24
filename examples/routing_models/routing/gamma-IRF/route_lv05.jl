@@ -8,7 +8,7 @@ function main()
     base = config["base"]["base"]
     acharbon = config["base"]["acharbon"]
     odunbar = config["base"]["odunbar"]
-    out = confif["base"]["output"]
+    out = config["base"]["output"]
     hydro_lv = config["level"]["hydro_lv"]
     hydroatlas_shp_file = joinpath(odunbar, config["source"]["hydroatlas_shp_file"])
     routing_levels_dir = joinpath(out, config["midway"]["routing_levels_dir"])
