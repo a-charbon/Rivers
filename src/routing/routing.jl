@@ -1,14 +1,14 @@
 using JSON
 
 # TODO write this using modules
-include("sub_processes/hillslope_routing.jl")
-include("sub_processes/physical_hillslope_routing.jl")
-include("sub_processes/neural_hillslope_routing.jl")
-include("sub_processes/river_channel_routing.jl")
 include("models/models.jl")
 include("models/gamma.jl")
 include("models/LSTM.jl")
 include("models/IRF.jl")
+include("sub_processes/hillslope_routing.jl")
+include("sub_processes/physical_hillslope_routing.jl")
+include("sub_processes/neural_hillslope_routing.jl")
+include("sub_processes/river_channel_routing.jl")
 
 # Auxiliar function
 function read_routing_lv_basins(routing_lv_file::String)
