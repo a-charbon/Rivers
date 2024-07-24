@@ -1,6 +1,10 @@
 #using Rivers
 using Dates
 using TOML
+include("src/engineering/write_routing_levels.jl")
+include("src/engineering/gauges_to_basins.jl")
+include("src/engineering/write_routing_timeseries.jl")
+include("src/engineering/write_routing_attributes.jl")
 
 function main()
     # 0. Unpack configuration file
